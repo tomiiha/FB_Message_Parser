@@ -37,8 +37,8 @@ def message_data(data_files, sender_list):
                     except:
                         pass
         results[name] = mess_count, round((tot_words / mess_count),2)
-    mess_count = 0
-    tot_words = 0
+        mess_count = 0
+        tot_words = 0
     return results
 
 # Processing
