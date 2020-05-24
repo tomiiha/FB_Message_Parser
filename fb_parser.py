@@ -32,8 +32,11 @@ def message_data(data_files, sender_list):
             for msg in dt_file['messages']:
                 if msg['sender_name'] == name:
                     mess_count += 1
-                    #tot_words += len(msg['content'].split())
-        results[name] = mess_count, (tot_words / mess_count)
+                    try:
+                        tot_words += len(msg['content'].split())
+                    except:
+                        pass
+        results[name] = mess_count, round((tot_words / mess_count),2)
     mess_count = 0
     tot_words = 0
     return results
