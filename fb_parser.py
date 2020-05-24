@@ -37,4 +37,5 @@ for z in data_files:
     read_mess(z)
 mess_count(data_files, sender_list)
 
-print(results)
+sort_res = sorted(results.items(), key=lambda x: x[1], reverse=True)
+print(sort_res)
