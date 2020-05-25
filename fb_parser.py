@@ -1,7 +1,7 @@
 import json
 import os
 
-# Dump lists
+# Data dump
 sender_list = []
 data_files = []
 results = {}
