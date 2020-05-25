@@ -6,7 +6,7 @@ sender_list = []
 data_files = []
 results = {}
 
-# Get files in folder first for batch processing.
+# Get files in folder first for batch processing in .py folder.
 file_list = os.listdir()
 for y in file_list:
     if y[-5:] == '.json':
