@@ -38,7 +38,7 @@ def message_data(data_files, sender_list):
                         tot_str += msg['content'].count('lol')
                     except:
                         pass
-        results[name] = [mess_count, round((tot_words / mess_count),2),tot_str]
+        results[name] = [mess_count, round((tot_words / mess_count),2), tot_str]
         mess_count = 0
         tot_words = 0
         tot_str = 0
