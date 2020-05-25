@@ -20,7 +20,7 @@ def read_mess(data_files):
             add_name = p_name['name']
             if add_name not in sender_list:
                 sender_list.append(add_name)
-    return sender_list
+    return message_data(data_files, sender_list)
 
 # 'mess_count' to capture total messages sent over time.
 def message_data(data_files, sender_list):
@@ -46,7 +46,6 @@ def message_data(data_files, sender_list):
 
 # Processing
 read_mess(data_files)
-message_data(data_files, sender_list)
 
 # Outputs
 print(results)
