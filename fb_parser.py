@@ -13,17 +13,17 @@ for y in file_list:
         data_files.append(y)
 
 # Prog capture names in message group.
-def read_mess(data_files):
-    for dt_file in data_files:
-        data_file = json.load(open(dt_file, 'r'))
-        for p_name in data_file['participants']:
+def participants(data_files):
+    for parse_file in data_files:
+        dt_file = json.load(open(parse_file, 'r'))
+        for p_name in dt_file['participants']:
             add_name = p_name['name']
             if add_name not in sender_list:
                 sender_list.append(add_name)
-    return message_data(data_files, sender_list)
+    return base_mess_data(data_files, sender_list)
 
 # 'mess_count' to capture total messages sent over time.
-def message_data(data_files, sender_list):
+def base_mess_data(data_files, sender_list):
     mess_count = 0
     tot_words = 0
     tot_str = 0
@@ -45,7 +45,7 @@ def message_data(data_files, sender_list):
     return results
 
 # Processing
-read_mess(data_files)
+participants(data_files)
 
 # Outputs
 print(results)
