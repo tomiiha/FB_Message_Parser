@@ -26,6 +26,7 @@ def read_mess(data_files):
 def message_data(data_files, sender_list):
     mess_count = 0
     tot_words = 0
+    tot_str = 0
     for name in sender_list:
         for parse_file in data_files:
             dt_file = json.load(open(parse_file, 'r'))
@@ -34,11 +35,13 @@ def message_data(data_files, sender_list):
                     mess_count += 1
                     try:
                         tot_words += len(msg['content'].split())
+                        tot_str += msg['content'].count('lol')
                     except:
                         pass
-        results[name] = mess_count, round((tot_words / mess_count),2)
+        results[name] = [mess_count, round((tot_words / mess_count),2),tot_str]
         mess_count = 0
         tot_words = 0
+        tot_str = 0
     return results
 
 # Processing
@@ -46,5 +49,4 @@ read_mess(data_files)
 message_data(data_files, sender_list)
 
 # Outputs
-sort_res = sorted(results.items(), key=lambda x: x[1], reverse=True)
-print(sort_res)
+print(results)
