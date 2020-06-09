@@ -1,0 +1,48 @@
+<head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+window.onload = (event) => {
+  console.log('page is fully loaded');
+	var ctx = document.getElementById('MsgTimeSeries').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+		data:
+			{}
+			,
+		options: {
+          scales: {
+            yAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: 'Message Count'
+              },
+              stacked: true
+            }]
+          }
+        }
+	});
+};
+
+</script>
+<style>
+body {
+	padding: 20px;
+	text-color: #222;
+	text-align: center;
+	width: 100%	
+}
+#container {
+	width: 1500px;
+	margin: auto;
+}
+</style>
+</head>
+<body>
+<div id="container">
+<h1>Totem Conversation Report</h1>
+<p>This is the report of trends, metrics etc. about the Totem crew</p>
+<canvas id="MsgTimeSeries">
+</canvas>
+</div>
+</body>
+
